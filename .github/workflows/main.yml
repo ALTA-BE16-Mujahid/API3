@@ -31,7 +31,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/be16app:latest
       - 
         name: multiple command
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.9
         with:
           host: ${{secrets.HOST }}
           username: ${{ secrets.USERNAME }}
