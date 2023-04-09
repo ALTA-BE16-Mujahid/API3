@@ -43,5 +43,5 @@ jobs:
         script: |
           docker stop ${{ secrets.CNAME }}
           docker rm ${{ secrets.CNAME }}
-          docker rmi be16prj:alpine
+          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/be16prj:alpine
           docker run --name ${{ secrets.CNAME }} -d -p 8000:8000 --link mysqlku -e DBUser=${{ secrets.DBUSER }} -e DBPassword=${{ secrets.DBPASSWORD }} -e DBHost=${{ secrets.DBHOST }} -e DBPort=${{ secrets.DBPORT }} -e DBName=${{ secrets.DBNAME }} -e JWT_SECRET=${{ secrets.JWT }}/be16app:latest
